@@ -9,7 +9,7 @@
 
 1. Клонируйте репозиторий:
 ```
-git clone https://github.com/username/project-x.git
+https://github.com/ArtKrst/my_project.git
 ```
 2. Установите зависимости:
 ```
