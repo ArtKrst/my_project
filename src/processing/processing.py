@@ -8,6 +8,6 @@ def filter_by_state(data: List[Dict], state: str = 'EXECUTED') -> List[Dict]:
 
 def sort_by_date(data: List[Dict], descending: bool = True) -> List[Dict]:
     """
-    Сортирует список словарей по дате..
+    Сортирует список словарей по дате.
     """
     return sorted(data, key=lambda x: x['date'], reverse=descending)
