@@ -1,6 +1,10 @@
 # src/utils/widget.py
 from src.mask import get_mask_card_number
 from src.mask import get_mask_account
+from datetime import datetime
+
+type_info = " ".join(parts[:-1])
+number = parts[-1]
 
 
 def mask_account_card(info: str) -> str:
@@ -11,9 +15,6 @@ def mask_account_card(info: str) -> str:
     if len(parts) < 2:
         return "Некорректный ввод."
 
-    type_info = " ".join(parts[:-1])
-    number = parts[-1]
-
     if type_info.lower() in ["visa", "mastercard", "maestro"]:
         masked_number = get_mask_card_number(number)
     elif type_info.lower() == "счет":
@@ -22,12 +23,6 @@ def mask_account_card(info: str) -> str:
         return "Неизвестный тип."
 
     return f"{type_info} {masked_number}"
-
-print(mask_account_card("Visa Platinum 7000792289606361"))
-print(mask_account_card("Счет 73654108430135874305"))
-print(mask_account_card("Unknown Type 1234567890"))
-
-from datetime import datetime
 
 
 def get_date(date_string: str) -> str:
@@ -39,3 +34,8 @@ def get_date(date_string: str) -> str:
     formatted_date = date_obj.strftime("%d.%m.%Y")
 
     return formatted_date
+
+
+print(mask_account_card("Visa Platinum 7000792289606361"))
+print(mask_account_card("Счет 73654108430135874305"))
+print(mask_account_card("Unknown Type 1234567890"))
