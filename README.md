@@ -17,9 +17,32 @@ pip install -r requirements.txt
 ```
 ## Использование:
 
-1. Откройте приложение в вашем веб-браузере.
-2. Создайте новый проект и начните добавлять задачи.
-3. Назначайте сроки выполнения и приоритеты для задач, чтобы эффективно управлять проектами.
+### Маскировка номера карты
+
+python
+from src.mask import getmaskcardnumber
+
+maskedcard = getmaskcardnumber("7000792289606361")
+print(maskedcard)  # Вывод: 7000 79  6361
+### Маскировка номера счета
+
+python
+from src.mask import getmaskaccount
+
+maskedaccount = getmaskaccount("73654108430135874305")
+print(maskedaccount)  # Вывод: 4305
+### Фильтрация по состоянию
+
+python
+from src.processing.processing import filterbystate
+
+data = 
+    {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
+    {'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'},
+
+
+executeditems = filterbystate(data)
+print(executeditems)  # Вывод: {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'}
 
 ## Документация:
 
