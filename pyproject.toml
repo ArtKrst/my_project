@@ -20,17 +20,17 @@ build-backend = "poetry.core.masonry.api"
 
 [flake8]
 max-line-length = 119
-ignore = E203, W503
-exclude = .git, __pycache__, venv
+ignore = ["E203", "W503"]
+exclude = [".git", "__pycache__", "venv"]
 
 [tool.mypy]
 disallow_untyped_defs = true
 warn_return_any = true
-exclude = 'venv'
+exclude = "venv"
 
 [tool.black]
 line-length = 119
-exclude = .git, __pycache__
+exclude = [".git", "__pycache__"]
 exclude = '''
 (
   /(
